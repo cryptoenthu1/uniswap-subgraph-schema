@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: Fetches the user staked balances on the Sushiswap AMM protocol.
-repository: https://github.com/tommytchan/masterchef-sushi-stakers-subrgraph
+description: Fetches the user staked balances on the Uniswap protocol.
+repository: https://github.com/cryptoenthu1/uniswap-subgraph-schema.git
 schema:
   file: ./schema.graphql
 dataSources:

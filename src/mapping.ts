@@ -1,4 +1,4 @@
-import {MasterChef, Deposit, Withdraw} from '../generated/MasterChef/MasterChef'
+import {MasterChef, Deposit, Withdraw} from '../generated/Uniswap/Uniswap'
 import {LiquidityPosition, User} from '../generated/schema'
 import {Address, BigDecimal, BigInt, log} from "@graphprotocol/graph-ts";
 
