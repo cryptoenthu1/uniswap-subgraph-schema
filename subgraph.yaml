@@ -1,0 +1,29 @@
+specVersion: 0.0.2
+description: Fetches the user staked balances on the Sushiswap AMM protocol.
+repository: https://github.com/tommytchan/masterchef-sushi-stakers-subrgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Uniswap
+    network: mainnet
+    source:
+      address: '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984'
+      abi: Uniswap
+      startBlock: 10861674
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - User
+        - LiquidityPosition
+      abis:
+        - name: Uniswap
+          file: ./abis/Uniswap.json
+      eventHandlers:
+        - event: Withdraw(indexed address,indexed uint256,uint256)
+          handler: handleDeposit
+        - event: Deposit(indexed address,indexed uint256,uint256)
+          handler: handleWithdraw
+      file: ./src/mapping.ts
